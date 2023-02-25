@@ -1,1 +1,52 @@
-<mxfile host="app.diagrams.net" modified="2023-02-25T22:03:56.896Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.56" version="20.8.23" etag="GjkZBb5wnADu5k7Bwkxb" type="github"><diagram name="Page-1" id="kwWUvTcJryA1hn9MFMku">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2023-02-25T22:20:54.637Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.56" etag="k7r-tD-6h0mLFkj-zwpY" version="20.8.23" type="github">
+  <diagram name="Page-1" id="kwWUvTcJryA1hn9MFMku">
+    <mxGraphModel dx="1221" dy="668" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-V2TwK8PnzqcN95DWUtF-1" value="Сервис получения видеопотока и отправки кадров на инференс" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="-V2TwK8PnzqcN95DWUtF-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="-V2TwK8PnzqcN95DWUtF-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="140" as="sourcePoint" />
+            <mxPoint x="440" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-V2TwK8PnzqcN95DWUtF-3" value="Отправка кадров" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="110" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-V2TwK8PnzqcN95DWUtF-4" value="ML модель.&lt;br&gt;На вход получаем кадр на выходе считаем число машин, которые пересекли условную линию" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="100" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="-V2TwK8PnzqcN95DWUtF-5" value="Если вдруг будет много свободного времени.&lt;br&gt;1.Собрать статистику и анализировать трафик на открытых камерах&lt;br&gt;какого-то города в течении 2х недель&lt;br&gt;2. Постоить модель предсказания трафика&lt;br&gt;3. Такие данные можно использовать например для принятия решений о размещении &lt;br&gt;рекламы на биллбордах, анализа трафика для онлайн бизнеса" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="430" width="720" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="-V2TwK8PnzqcN95DWUtF-6" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="-V2TwK8PnzqcN95DWUtF-4" target="-V2TwK8PnzqcN95DWUtF-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="310" as="sourcePoint" />
+            <mxPoint x="530" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-V2TwK8PnzqcN95DWUtF-7" value="Backend который управляет (добавляет/убирает) видеопотоки и получает результат подсчёта" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="240" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="-V2TwK8PnzqcN95DWUtF-8" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="-V2TwK8PnzqcN95DWUtF-7" target="-V2TwK8PnzqcN95DWUtF-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="300" as="sourcePoint" />
+            <mxPoint x="450" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-V2TwK8PnzqcN95DWUtF-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="-V2TwK8PnzqcN95DWUtF-7" target="-V2TwK8PnzqcN95DWUtF-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="500" as="sourcePoint" />
+            <mxPoint x="580" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-V2TwK8PnzqcN95DWUtF-10" value="Приятный front на котором отображается статистика за прошедшую неделю" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="380" width="260" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
