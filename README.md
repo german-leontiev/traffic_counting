@@ -1,3 +1,5 @@
 # traffic_counting
 
-### проект выполнен командой в составе Герман, Юля, Дмитрий
+
+### project authors German, Julia, Dmitry
+
