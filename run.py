@@ -36,4 +36,15 @@ if __name__ == '__main__':
     argum = parser.parse_args()
     config = Config(os.path.join('configs', 'configs.yaml'))
 
+    # If you not use any weight and want to use pretrained on COCO, uncomment these lines
+    MAPPING_DICT = {
+        0: 0,
+        1: 0,
+        2: 1,
+        3: 0,
+        5: 2,
+        7: 3
+    }
+    argum.mapping_dict = None # MAPPING_DICT
+
     main(argum, config)
