@@ -3,6 +3,8 @@ from tqdm import tqdm
 from .detect import ImageDetect
 from .track import VideoTracker, VideoCounting
 from .datasets import VideoWriter, VideoLoader
+import matplotlib.pyplot as plt
+import cv2
 
 
 class CountingPipeline:
@@ -40,10 +42,10 @@ class CountingPipeline:
                 videoloader.dataset.video_info,
                 saved_path=self.saved_path,
                 obj_list=self.class_names)
-
+            
             videocounter = VideoCounting(
-                class_names=self.class_names,
-                zone_path=os.path.join(self.zone_path, cam_name + ".json"))
+                class_names = self.class_names,
+                zone_path = os.path.join(self.zone_path, cam_name+".json"))
 
             obj_dict = {
                 'frames': [],
@@ -70,6 +72,7 @@ class CountingPipeline:
                         continue
                     track_result = self.tracker.run(ori_img, boxes, labels, scores)
 
+
                     # box_xywh = change_box_order(track_result['boxes'],'xyxy2xywh');
                     # videowriter.write(
                     #     ori_img,
@@ -83,17 +86,19 @@ class CountingPipeline:
                         obj_dict['labels'].append(track_result['labels'][j])
                         obj_dict['boxes'].append(track_result['boxes'][j])
 
+
+
             result_dict = videocounter.run(
-                frames=obj_dict['frames'],
-                tracks=obj_dict['tracks'],
-                labels=obj_dict['labels'],
-                boxes=obj_dict['boxes'],
-                output_path=os.path.join(self.saved_path, cam_name + '.csv'))
+                    frames = obj_dict['frames'],
+                    tracks = obj_dict['tracks'],
+                    labels = obj_dict['labels'],
+                    boxes = obj_dict['boxes'],
+                    output_path=os.path.join(self.saved_path, cam_name+'.csv'))
 
             videoloader.reinitialize_stream()
             videowriter.write_full_to_video(
                 videoloader,
-                num_classes=len(self.class_names),
-                csv_path=os.path.join(self.saved_path, cam_name + '.csv'),
+                num_classes = len(self.class_names),
+                csv_path=os.path.join(self.saved_path, cam_name+'.csv'),
                 paths=videocounter.directions,
                 polygons=videocounter.polygons)

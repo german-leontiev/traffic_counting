@@ -4,8 +4,7 @@ from configs import *
 
 from .cuda import get_devices_info
 
-CACHE_DIR = './.cache'
-
+CACHE_DIR='./.cache'
 
 def get_instance(config, **kwargs):
     # Inherited from https://github.com/vltanh/pytorch-template
