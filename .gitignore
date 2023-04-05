@@ -134,3 +134,4 @@ datasets/
 
 # pycharm files
 /.idea
+/networks/deepsort/deep/checkpoint/
