@@ -16,13 +16,6 @@ parser.add_argument('--mapping', default=None, help='Specify a class mapping if 
 
 
 def main(args: Any, model_params: object) -> None:
-    """
-    Function for run main pipeline
-    Args:
-        args: input parameters (weight, input_path, output_path, gpus, debug, mapping)
-        model_params: class Config with yolo parameters (see configs.yaml)
-    Returns: None
-    """
     if os.path.isdir(args.input_path):
         if not os.path.exists(args.output_path):
             os.makedirs(args.output_path)
