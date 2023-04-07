@@ -18,3 +18,5 @@ scipy~=1.9.1
 PyQt5~=5.15.9
 seaborn==0.12.2
 gitpython==3.1.31
+Flask==2.1.1
+uvicorn==0.18.3

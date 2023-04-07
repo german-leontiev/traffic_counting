@@ -10,6 +10,9 @@ python run.py --input_path=<>  --output_path=<> --weight=<weights path>
 
 Note: name of input file must be: cam_04.mp4
 
+## How to run web app
+Run `python app.py` and then go to `http://127.0.0.1:5003` in your web browser <br>
+*!!! Tested on chromium-based browsers*
 
 ### project authors German, Julia, Dmitry
 
