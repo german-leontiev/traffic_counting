@@ -6,6 +6,7 @@ import argparse
 import subprocess
 from pathlib import Path
 from werkzeug.utils import secure_filename
+import os
 
 app = flask.Flask(__name__)
 
@@ -43,7 +44,11 @@ def predict():
 
         filepath = folder_name + secure_filename(f.filename)
         f.save(filepath)
-        rm_tree("static/result.mp4")
+        
+        rm_path = "static/result.mp4"
+        if os.path.exists(rm_path):
+            rm_tree(rm_path)
+            
         subprocess.run(f"python run.py --input_path={filepath} --output_path=static/result.mp4/{filepath.split('/')[-1]} --weight=best.pt", shell=True)
            
         return send_file(f"static/result.mp4/{filepath.split('/')[-1]}/{filepath.split('/')[-1]}", as_attachment=True)
