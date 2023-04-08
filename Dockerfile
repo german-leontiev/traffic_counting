@@ -12,7 +12,7 @@ RUN apt-get -qq update && apt-get install -y curl python3-pip && rm -rf /var/lib
 RUN curl --silent -O https://dl.min.io/client/mc/release/linux-amd64/mc && \
     chmod +x mc && mv mc /usr/local/bin
 
-RUN mc alias set s3b ${MINIO_HOST} ${MINIO_USERNAME} ${MINIO_PASSWORD}
+RUN mc alias set s3b $MINIO_HOST $MINIO_USERNAME $MINIO_PASSWORD
 RUN mc cp s3b/model/best.pt best.pt
 
 #ENV DEBIAN_FRONTEND=noninteractive
