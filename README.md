@@ -1,8 +1,13 @@
 # Traffic counting
+This project was created to track traffic on the roads. 
+With it, you can analyze and predict traffic jams, as well 
+as build optimal routes. The project has a built-in ability
+to detect cars and count cars that have passed
+the road per unit of time
 
 # Demo:
 
-[![Demo](https://www.youtube.com/watch?v=O-WsFncBcrs)]
+[![Demo](demo/ezgif.com-video-to-gif.gif)](https://www.youtube.com/watch?v=O-WsFncBcrs)
 
 # How to use:
 
@@ -22,6 +27,24 @@ Run `python app.py` and then go to `http://127.0.0.1:5003` in your web browser <
 
 ## To run container on local machine
 `docker run -dit -p 5003:5003 germanleontiev/traffic_counting`
+
+# Experiments:
+
+The yolov8 model was trained with different training parameters
+
+## Results:
+
+| Optimizer |  Learning Rate  | Box Loss | Cls Loss | Dfl_loss |
+| :---:   | :---: | :---: | :---: | :---: |
+| Adam | 0.001 | 0.54148 | 0.49476 | 0.97529 |
+| Adam | 0.01 | 0.53688 | 0.48114 | 0.97096 |
+| Adam | 0.1 | 0.54302 | 0.4469 | 0.9662 |
+| RMSProp | 0.001 | 0.54516 | 0.47751 | 0.98843 |
+| RMSProp | 0.01 | 0.54908 | 0.48331 | 0.98594 |
+| RMSProp | 0.1 | 0.54254 | 0.47167 | 0.9744 |
+| SGD | 0.001 | 0.53897 | 0.44084 | 0.96548 |
+| SGD | 0.01 | 0.53944 | 0.44993 | 0.95431 |
+| SGD | 0.1 | 0.55186 | 0.46054 | 0.94533 |
 
 ### project authors German, Julia, Dmitry
 
