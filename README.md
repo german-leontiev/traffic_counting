@@ -5,9 +5,23 @@ as build optimal routes. The project has a built-in ability
 to detect cars and count cars that have passed
 the road per unit of time
 
+The limit for the processed video stream is currently
+60 frames per second (60 FPS)
+
+To scale the project, it is proposed to organize 
+a kubercluster for the adaptive launch of the required
+number of containers with the application
+
+Business metric. The base metric is the % conversion from the stream.
+Permissible error in conversion calculation is not higher than 10%
+
 # Demo:
 
 [![Demo](demo/ezgif.com-video-to-gif.gif)](https://www.youtube.com/watch?v=O-WsFncBcrs)
+
+## Component Diagram
+
+[![Component Diagram](demo/traffic_counter%20dra.png)]()
 
 # How to use:
 
