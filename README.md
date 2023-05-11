@@ -21,7 +21,7 @@ Permissible error in conversion calculation is not higher than 10%
 
 ## Component Diagram
 
-[![Component Diagram](demo/traffic_counter%20dra.png)]()
+[![Component Diagram](demo/traffic_counter.png)]()
 
 # How to use:
 
